@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, SquareCode, Users, Send } from 'lucide-react';
 import { SectionShell } from '@/components/section-shell';
 import { MotionSection } from '@/components/motion';
 import { brand, socialLinks } from '@/lib/site';
@@ -56,9 +56,9 @@ export const ContactSection: React.FC = () => {
                 >
                   <span className="inline-flex items-center gap-2">
                     {s.label === 'GitHub' ? (
-                      <Github className="h-4 w-4" />
+                      <SquareCode className="h-4 w-4" />
                     ) : s.label === 'LinkedIn' ? (
-                      <Linkedin className="h-4 w-4" />
+                      <Users className="h-4 w-4" />
                     ) : (
                       <Send className="h-4 w-4" />
                     )}
