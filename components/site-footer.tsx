@@ -44,22 +44,25 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold text-primary">Socials</p>
+          <p className="text-sm font-semibold text-primary">Contact</p>
             <ul className="mt-4 grid gap-3">
-              {socialLinks.map((social) => (
-                <li key={social.label}>
-                  <Link
-                    href={social.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-sm text-muted transition-colors hover:text-primary"
-                  >
-                    {social.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <li>
+              <Link href={`mailto:${brand.email}`} className="text-sm text-muted transition-colors hover:text-primary">
+                {brand.email}
+              </Link>
+            </li>
+            <li>
+              <Link href={`tel:+998903638333`} className="text-sm text-muted transition-colors hover:text-primary">
+                +998 90 363 83 33
+              </Link>
+            </li>
+            <li>
+              <Link href="https://t.me/BugNetTech" target="_blank" rel="noreferrer" className="text-sm text-muted transition-colors hover:text-primary">
+                @BugNetTech
+              </Link>
+            </li>
+          </ul>
+        </div>
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-border/80 pt-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
