@@ -139,28 +139,25 @@ export const projects: ProjectItem[] = [
 
 export const testimonials: TestimonialItem[] = [
   {
-    quote:
-      'BugNet delivered the kind of clarity, craftsmanship, and calm execution we expect from a top-tier engineering partner.',
-    name: 'Maya Chen',
-    role: 'VP of Product',
-    company: 'Northstar Capital',
-    initials: 'MC'
+    quote: 'BugNet loyihamizni o‘z vaqtida va tartibli yetkazib berdi. Yaxshi tashkil etilgan arxitektura tufayli tizimimiz barqaror ishlayapti.',
+    name: 'Javlon Akhmedov',
+    role: "Texnologiya direktori",
+    company: 'Nova Trade',
+    initials: 'JA'
   },
   {
-    quote:
-      'They understood our architecture constraints immediately and shipped a platform that felt both refined and resilient.',
-    name: 'David Romero',
-    role: 'CTO',
-    company: 'Apex Commerce',
-    initials: 'DR'
+    quote: 'Dizayn va tez iteratsiyalar foydalanuvchi tajribasini sezilarli darajada yaxshiladi. BugNet bilan ishlash juda samarali bo‘ldi.',
+    name: 'Nilufar Yusupova',
+    role: 'Mahsulot menejeri',
+    company: 'Smart Edu',
+    initials: 'NY'
   },
   {
-    quote:
-      'The team was precise, responsive, and deeply thoughtful about performance, which made the whole engagement feel premium.',
-    name: 'Elena Park',
-    role: 'Head of Operations',
-    company: 'Helix Health',
-    initials: 'EP'
+    quote: 'Rezervatsiya va to‘lov tizimlarimiz silliq ishlayapti; mijozlarimiz qoniqmoqda. Jamoa juda professionalligi bilan ajralib turadi.',
+    name: 'Bekzod Karimov',
+    role: "Operatsiyalar bo'yicha boshliq",
+    company: 'Premium Salon',
+    initials: 'BK'
   }
 ];
 
