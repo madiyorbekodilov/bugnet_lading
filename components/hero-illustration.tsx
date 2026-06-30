@@ -1,31 +1,172 @@
+import { motion } from 'framer-motion';
+
 export function HeroIllustration() {
+  const float = {
+    animate: {
+      y: [0, -8, 0],
+      rotate: [0, 1.5, 0],
+      transition: { duration: 6, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }
+    }
+  };
+
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[680px]">
-      <div className="absolute inset-0 rounded-[40px] border border-border bg-white shadow-[0_30px_100px_rgba(15,23,42,0.08)]" />
-      <div className="absolute inset-4 rounded-[34px] border border-slate-100 bg-[linear-gradient(180deg,rgba(248,250,252,0.96),rgba(255,255,255,0.98))]" />
-      <div className="absolute left-8 top-8 rounded-full border border-border bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-muted shadow-sm">
-        Enterprise delivery
+    <div className="relative mx-auto w-full max-w-[720px] px-4">
+      <div className="relative flex items-center justify-center">
+        {/* Background soft glow */}
+        <div className="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-blue-50/40 to-transparent blur-3xl" />
+
+        {/* Left: ERP Dashboard (slightly behind) */}
+        <motion.div
+          className="relative z-10 -mr-8 w-[260px] rounded-2xl border border-slate-200 bg-white shadow-lg"
+          variants={float}
+          initial={{ y: 8, rotate: -2 }}
+          animate={{ y: [8, -6, 8], rotate: [-2, 1.5, -2] }}
+          transition={{ duration: 6, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between">
+              <div className="h-3 w-20 rounded-full bg-slate-100" />
+              <div className="flex items-center gap-2">
+                <div className="h-3 w-3 rounded-full bg-green-400" />
+                <div className="h-3 w-3 rounded-full bg-yellow-400" />
+                <div className="h-3 w-3 rounded-full bg-red-400" />
+              </div>
+            </div>
+
+            <div className="mt-4 grid grid-cols-3 gap-2">
+              <div className="rounded-lg bg-slate-50 p-2 text-center">
+                <div className="text-xs text-muted">Orders</div>
+                <div className="mt-1 text-sm font-semibold">1,248</div>
+              </div>
+              <div className="rounded-lg bg-slate-50 p-2 text-center">
+                <div className="text-xs text-muted">Revenue</div>
+                <div className="mt-1 text-sm font-semibold">$94.2k</div>
+              </div>
+              <div className="rounded-lg bg-slate-50 p-2 text-center">
+                <div className="text-xs text-muted">Fulfillment</div>
+                <div className="mt-1 text-sm font-semibold">98.6%</div>
+              </div>
+            </div>
+
+            <div className="mt-4 h-24 rounded-md bg-gradient-to-b from-white to-slate-50 p-3 shadow-inner">
+              {/* Simple sparkline */}
+              <svg viewBox="0 0 100 28" className="w-full h-full">
+                <path d="M0,20 L15,18 L30,10 L45,12 L60,6 L75,8 L90,4 L100,2" stroke="#2563eb" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+
+            <div className="mt-4 space-y-2">
+              <div className="flex items-center justify-between text-xs text-muted">
+                <div>Latest orders</div>
+                <div className="font-medium">View</div>
+              </div>
+              <div className="grid gap-2">
+                <div className="flex items-center justify-between rounded-md bg-white px-3 py-2 shadow-sm">
+                  <div className="text-sm">#9812</div>
+                  <div className="text-xs text-muted">Paid</div>
+                </div>
+                <div className="flex items-center justify-between rounded-md bg-white px-3 py-2 shadow-sm">
+                  <div className="text-sm">#9804</div>
+                  <div className="text-xs text-muted">Pending</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Center: Salon Management (front) */}
+        <motion.div
+          className="relative z-20 w-[320px] -translate-y-2 rounded-2xl border border-slate-200 bg-white shadow-2xl"
+          variants={float}
+          initial={{ y: -6, rotate: 2 }}
+          animate={{ y: [-6, 6, -6], rotate: [2, -1.5, 2] }}
+          transition={{ duration: 5.5, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
+        >
+          <div className="p-5">
+            <div className="flex items-center justify-between">
+              <div className="text-sm font-semibold">Salon Dashboard</div>
+              <div className="text-xs text-muted">Mon • 09:42</div>
+            </div>
+
+            <div className="mt-4 flex items-center gap-3">
+              <div className="rounded-md bg-indigo-50 p-2 text-center">
+                <div className="text-xs text-muted">Open</div>
+                <div className="text-sm font-semibold">12</div>
+              </div>
+              <div className="rounded-md bg-slate-50 p-2 text-center">
+                <div className="text-xs text-muted">Booked</div>
+                <div className="text-sm font-semibold">34</div>
+              </div>
+              <div className="rounded-md bg-slate-50 p-2 text-center">
+                <div className="text-xs text-muted">Clients</div>
+                <div className="text-sm font-semibold">1,204</div>
+              </div>
+            </div>
+
+            <div className="mt-4 rounded-md bg-slate-50 p-3">
+              <div className="flex items-center justify-between mb-2 text-xs text-muted">
+                <div>Today’s schedule</div>
+                <div className="text-xs">3 items</div>
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between rounded-md bg-white px-3 py-2 shadow-sm">
+                  <div className="text-sm">10:00 — Haircut • Alex</div>
+                  <div className="text-xs text-muted">Confirmed</div>
+                </div>
+                <div className="flex items-center justify-between rounded-md bg-white px-3 py-2 shadow-sm">
+                  <div className="text-sm">12:30 — Color • Maya</div>
+                  <div className="text-xs text-muted">Confirmed</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4 flex items-center justify-between">
+              <button className="rounded-full bg-primary px-4 py-2 text-white text-sm shadow">New booking</button>
+              <div className="text-xs text-muted">Sync • Cloud</div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Right: AI Analytics (slightly behind) */}
+        <motion.div
+          className="relative z-0 -ml-8 w-[280px] rounded-2xl border border-slate-200 bg-white shadow-lg"
+          variants={float}
+          initial={{ y: 6, rotate: -1 }}
+          animate={{ y: [6, -4, 6], rotate: [-1, 2, -1] }}
+          transition={{ duration: 6.5, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between">
+              <div className="text-sm font-semibold">AI Analytics</div>
+              <div className="text-xs text-muted">Realtime</div>
+            </div>
+
+            <div className="mt-3 flex items-center gap-3">
+              <div className="rounded-md bg-slate-50 p-3 text-center">
+                <div className="text-xs text-muted">NPS</div>
+                <div className="text-sm font-semibold">62</div>
+              </div>
+              <div className="rounded-md bg-slate-50 p-3 text-center">
+                <div className="text-xs text-muted">Conversion</div>
+                <div className="text-sm font-semibold">7.4%</div>
+              </div>
+            </div>
+
+            <div className="mt-4 h-28 rounded-md bg-gradient-to-b from-white to-slate-50 p-3 shadow-inner">
+              {/* Bar chart */}
+              <svg viewBox="0 0 100 40" className="w-full h-full">
+                <rect x="6" y="18" width="8" height="20" rx="1" fill="#60a5fa" />
+                <rect x="22" y="10" width="8" height="28" rx="1" fill="#3b82f6" />
+                <rect x="38" y="6" width="8" height="32" rx="1" fill="#2563eb" />
+                <rect x="54" y="14" width="8" height="24" rx="1" fill="#1e40af" />
+                <rect x="70" y="4" width="8" height="34" rx="1" fill="#1e3a8a" />
+              </svg>
+            </div>
+
+            <div className="mt-4 text-xs text-muted">Model latency: 18ms • Uptime 99.99%</div>
+          </div>
+        </motion.div>
       </div>
-      <div className="absolute right-8 top-8 flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/90 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-accent shadow-sm">
-        <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-        Reliable by design
-      </div>
-      <div className="absolute left-12 top-28 h-36 w-36 rounded-[34px] border border-slate-200 bg-white/90 shadow-sm animate-float-slow" />
-      <div className="absolute left-20 top-36 h-20 w-20 rounded-full bg-slate-100" />
-      <div className="absolute right-14 top-28 h-28 w-28 rounded-[30px] border border-blue-200 bg-blue-50 shadow-sm animate-drift" />
-      <div className="absolute right-24 top-36 h-8 w-16 rounded-full bg-white shadow-sm" />
-      <div className="absolute bottom-14 left-14 h-44 w-56 rounded-[32px] border border-slate-200 bg-white shadow-sm animate-float-slow [animation-delay:1s]">
-        <div className="absolute left-5 top-5 h-3 w-24 rounded-full bg-slate-200" />
-        <div className="absolute left-5 top-12 h-3 w-32 rounded-full bg-slate-100" />
-        <div className="absolute inset-x-5 bottom-5 top-20 rounded-[22px] bg-slate-50" />
-      </div>
-      <div className="absolute bottom-16 right-12 h-36 w-44 rounded-[28px] border border-slate-200 bg-slate-50 shadow-sm">
-        <div className="absolute left-4 top-4 h-2.5 w-20 rounded-full bg-slate-200" />
-        <div className="absolute left-4 top-10 h-24 w-28 rounded-[20px] bg-white shadow-sm" />
-        <div className="absolute right-4 bottom-4 h-10 w-10 rounded-full bg-blue-50" />
-      </div>
-      <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-200/70 bg-blue-50/60 blur-3xl animate-glow-soft" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_48%,rgba(37,99,235,0.08),transparent_36%)]" />
     </div>
   );
 }
