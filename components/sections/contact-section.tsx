@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export const ContactSection: React.FC = () => {
   return (
-    <SectionShell className="bg-white">
+    <SectionShell id="contact" className="bg-white">
       <MotionSection className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         <div>
           <h2 className="text-3xl font-bold">Contact</h2>
