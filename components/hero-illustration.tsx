@@ -11,19 +11,19 @@ export function HeroIllustration() {
   };
 
   return (
-    <div className="relative mx-auto w-full max-w-[720px] px-4">
-      <div className="relative flex items-center justify-center">
+    <div className="relative mx-auto w-full max-w-[46rem] px-2 sm:px-4">
+      <div className="relative flex flex-col items-center justify-center gap-4 lg:flex-row lg:items-end lg:gap-0">
         {/* Background soft glow */}
-        <div className="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-blue-50/40 to-transparent blur-3xl" />
+        <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-tr from-blue-50/40 to-transparent blur-3xl" />
 
         {/* Left: ERP Dashboard (slightly behind) */}
         <motion.div
-          className="relative z-10 -mr-8 w-[260px] rounded-2xl border border-slate-200 bg-white shadow-lg"
+          className="relative z-10 w-full max-w-[20rem] rounded-2xl border border-slate-200 bg-white shadow-lg lg:mr-[-2rem] lg:max-w-[17rem]"
           initial={{ y: 8, rotate: -2 }}
           animate={{ y: [8, -6, 8], rotate: [-2, 1.5, -2] }}
           transition={floatTransition}
         >
-          <div className="p-4">
+          <div className="p-4 sm:p-5">
             <div className="flex items-center justify-between">
               <div className="h-3 w-20 rounded-full bg-slate-100" />
               <div className="flex items-center gap-2">
@@ -50,7 +50,7 @@ export function HeroIllustration() {
 
             <div className="mt-4 h-24 rounded-md bg-gradient-to-b from-white to-slate-50 p-3 shadow-inner">
               {/* Simple sparkline */}
-              <svg viewBox="0 0 100 28" className="w-full h-full">
+              <svg viewBox="0 0 100 28" className="h-full w-full">
                 <path d="M0,20 L15,18 L30,10 L45,12 L60,6 L75,8 L90,4 L100,2" stroke="#2563eb" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
@@ -76,18 +76,18 @@ export function HeroIllustration() {
 
         {/* Center: Salon Management (front) */}
         <motion.div
-          className="relative z-20 w-[320px] -translate-y-2 rounded-2xl border border-slate-200 bg-white shadow-2xl"
+          className="relative z-20 w-full max-w-[22rem] rounded-2xl border border-slate-200 bg-white shadow-2xl lg:max-w-[19rem] lg:-translate-y-2"
           initial={{ y: -6, rotate: 2 }}
           animate={{ y: [-6, 6, -6], rotate: [2, -1.5, 2] }}
           transition={{ ...floatTransition, duration: 5.5 }}
         >
-          <div className="p-5">
+          <div className="p-5 sm:p-6">
             <div className="flex items-center justify-between">
               <div className="text-sm font-semibold">Salon Dashboard</div>
               <div className="text-xs text-muted">Mon • 09:42</div>
             </div>
 
-            <div className="mt-4 flex items-center gap-3">
+            <div className="mt-4 grid grid-cols-3 gap-3">
               <div className="rounded-md bg-indigo-50 p-2 text-center">
                 <div className="text-xs text-muted">Open</div>
                 <div className="text-sm font-semibold">12</div>
@@ -120,7 +120,7 @@ export function HeroIllustration() {
             </div>
 
             <div className="mt-4 flex items-center justify-between">
-              <button className="rounded-full bg-primary px-4 py-2 text-white text-sm shadow">New booking</button>
+              <button className="rounded-full bg-primary px-4 py-2 text-sm text-white shadow">New booking</button>
               <div className="text-xs text-muted">Sync • Cloud</div>
             </div>
           </div>
@@ -128,12 +128,12 @@ export function HeroIllustration() {
 
         {/* Right: AI Analytics (slightly behind) */}
         <motion.div
-          className="relative z-0 -ml-8 w-[280px] rounded-2xl border border-slate-200 bg-white shadow-lg"
+          className="relative z-0 w-full max-w-[20rem] rounded-2xl border border-slate-200 bg-white shadow-lg lg:ml-[-2rem] lg:max-w-[17.5rem]"
           initial={{ y: 6, rotate: -1 }}
           animate={{ y: [6, -4, 6], rotate: [-1, 2, -1] }}
           transition={{ ...floatTransition, duration: 6.5 }}
         >
-          <div className="p-4">
+          <div className="p-4 sm:p-5">
             <div className="flex items-center justify-between">
               <div className="text-sm font-semibold">AI Analytics</div>
               <div className="text-xs text-muted">Realtime</div>
@@ -152,7 +152,7 @@ export function HeroIllustration() {
 
             <div className="mt-4 h-28 rounded-md bg-gradient-to-b from-white to-slate-50 p-3 shadow-inner">
               {/* Bar chart */}
-              <svg viewBox="0 0 100 40" className="w-full h-full">
+              <svg viewBox="0 0 100 40" className="h-full w-full">
                 <rect x="6" y="18" width="8" height="20" rx="1" fill="#60a5fa" />
                 <rect x="22" y="10" width="8" height="28" rx="1" fill="#3b82f6" />
                 <rect x="38" y="6" width="8" height="32" rx="1" fill="#2563eb" />

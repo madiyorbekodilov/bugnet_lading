@@ -19,13 +19,13 @@ export function SiteHeader() {
         isScrolled && 'border-border/70 bg-white/80 shadow-[0_8px_30px_rgba(15,23,42,0.04)] backdrop-blur-2xl'
       )}
     >
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4 lg:px-8">
+      <div className="relative mx-auto flex max-w-[1280px] items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/#home" className="flex items-center gap-3 font-semibold tracking-[-0.04em] text-primary">
-          <img src="/logo.png" alt="BugNet" className="h-[36px] w-auto rounded-[6px]" />
+          <img src="/logo.png" alt="BugNet" className="h-9 w-auto rounded-[6px] sm:h-[36px]" />
           <span className="text-base">BugNet</span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-6 xl:gap-8 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.label}
@@ -47,16 +47,20 @@ export function SiteHeader() {
           type="button"
           aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={open}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-[16px] border border-border bg-white text-primary shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 lg:hidden"
+          aria-controls="mobile-navigation"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[16px] border border-border bg-white text-primary shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 lg:hidden"
           onClick={() => setOpen((current) => !current)}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
-      <div className={cn('lg:hidden', open ? 'block' : 'hidden')}>
-        <div className="mx-auto max-w-[1280px] px-6 pb-4 lg:px-8">
-          <div className="rounded-[24px] border border-border bg-white p-4 shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
+      <div
+        id="mobile-navigation"
+        className={cn('absolute left-0 right-0 top-full z-40 lg:hidden', open ? 'block' : 'hidden')}
+      >
+        <div className="mx-auto max-w-[1280px] px-4 pb-4 sm:px-6 lg:px-8">
+          <div className="max-h-[calc(100dvh-5rem)] overflow-y-auto rounded-[24px] border border-border bg-white/95 p-3 shadow-[0_18px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl">
             <nav aria-label="Mobile primary" className="grid gap-2">
               {navItems.map((item) => (
                 <Link

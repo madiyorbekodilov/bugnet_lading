@@ -4,14 +4,14 @@ import { brand, footerServiceLinks, navItems } from '@/lib/site';
 export function SiteFooter() {
   return (
     <footer className="border-t border-border/80 bg-white">
-      <div className="mx-auto max-w-[1280px] px-6 py-16 lg:px-8 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr_0.75fr_0.95fr]">
-          <div>
-            <Link href="/#home" className="inline-flex items-center gap-3 font-semibold tracking-[-0.03em] text-primary">
-              <img src="/logo.png" alt="BugNet" className="h-[42px] w-auto rounded-[8px]" />
+      <div className="mx-auto max-w-[1280px] px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+        <div className="grid gap-10 text-center sm:grid-cols-2 lg:grid-cols-[1.25fr_0.75fr_0.75fr_0.95fr] lg:text-left">
+          <div className="lg:justify-self-start">
+            <Link href="/#home" className="inline-flex items-center justify-center gap-3 font-semibold tracking-[-0.03em] text-primary lg:justify-start">
+              <img src="/logo.png" alt="BugNet" className="h-10 w-auto rounded-[8px] sm:h-[42px]" />
               <span className="text-base">{brand.name}</span>
             </Link>
-            <p className="mt-4 max-w-md text-sm leading-7 text-muted">
+            <p className="mx-auto mt-4 max-w-md text-sm leading-7 text-muted lg:mx-0">
               Building Software That Businesses Trust.
             </p>
             <p className="mt-6 text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">
@@ -19,7 +19,7 @@ export function SiteFooter() {
             </p>
           </div>
 
-          <div>
+          <div className="grid justify-items-center gap-4 lg:justify-items-start">
             <p className="text-sm font-semibold text-primary">Quick links</p>
             <ul className="mt-4 grid gap-3">
               {navItems.map((item) => (
@@ -32,7 +32,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div>
+          <div className="grid justify-items-center gap-4 lg:justify-items-start">
             <p className="text-sm font-semibold text-primary">Services</p>
             <ul className="mt-4 grid gap-3">
               {footerServiceLinks.map((service) => (
@@ -43,7 +43,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div>
+          <div className="grid justify-items-center gap-4 lg:justify-items-start">
             <p className="text-sm font-semibold text-primary">Contact</p>
             <ul className="mt-4 grid gap-3">
               <li>
@@ -70,7 +70,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-border/80 pt-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-3 border-t border-border/80 pt-6 text-center text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:text-left">
           <p>
             <Link className="transition-colors hover:text-primary" href={`mailto:${brand.email}`}>
               {brand.email}

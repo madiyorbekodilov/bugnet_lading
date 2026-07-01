@@ -17,29 +17,29 @@ export function FeaturedProjectsSection() {
           description="These placeholders represent the kind of systems we build: polished, scalable, and shaped around real business operations."
         />
 
-        <MotionGroup className="mt-12 grid gap-6 lg:grid-cols-3">
+        <MotionGroup className="mt-10 grid gap-5 lg:grid-cols-3">
           {projects.map((project) => (
             <MotionItem key={project.title}>
               <MotionCard className="group h-full">
                 <Card className="h-full overflow-hidden border-slate-200 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04)] group-hover:shadow-[0_24px_70px_rgba(15,23,42,0.09)]">
-                  <div className="relative aspect-[16/11] overflow-hidden border-b border-border bg-slate-50">
-                    <div className="absolute inset-0 p-4">
+                  <div className="relative aspect-[16/12] overflow-hidden border-b border-border bg-slate-50 sm:aspect-[16/11]">
+                    <div className="absolute inset-0 p-3 sm:p-4">
                       {/* Render realistic UI previews purely with HTML/CSS/SVG */}
                       {project.title.includes('ERP') ? (
-                        <div className="h-full w-full flex gap-4">
-                          <div className="w-20 rounded-md bg-slate-100 p-2">
+                        <div className="grid h-full w-full gap-3 sm:grid-cols-[minmax(0,0.32fr)_minmax(0,1fr)]">
+                          <div className="rounded-md bg-slate-100 p-2">
                             <div className="mb-3 h-3 w-full rounded bg-slate-200" />
                             <div className="space-y-2">
                               {['Dashboard', 'Orders', 'Products', 'Employees'].map((t) => (
-                                <div key={t} className="h-3 rounded bg-white shadow-sm px-2 py-1 text-xs flex items-center">
-                                  <div className="h-2 w-2 rounded-full bg-slate-300 mr-2" />
+                                <div key={t} className="flex h-8 items-center rounded bg-white px-2 text-xs shadow-sm">
+                                  <div className="mr-2 h-2 w-2 rounded-full bg-slate-300" />
                                   <span className="text-[11px] text-slate-500">{t}</span>
                                 </div>
                               ))}
                             </div>
                           </div>
 
-                          <div className="flex-1 rounded-md bg-white p-3 shadow-inner flex flex-col">
+                          <div className="flex min-w-0 flex-col rounded-md bg-white p-3 shadow-inner">
                             <div className="grid grid-cols-3 gap-2">
                               <div className="rounded-md bg-slate-50 p-2 text-center">
                                 <div className="text-xs text-slate-400">Revenue</div>
@@ -56,7 +56,7 @@ export function FeaturedProjectsSection() {
                             </div>
 
                             <div className="mt-3 h-24 rounded-md bg-gradient-to-b from-white to-slate-50 p-2 shadow-inner">
-                              <svg viewBox="0 0 120 40" className="w-full h-full">
+                              <svg viewBox="0 0 120 40" className="h-full w-full">
                                 <path d="M0,30 L12,26 L24,18 L36,20 L48,12 L60,18 L72,8 L84,12 L96,6 L108,4 L120,2" stroke="#2563eb" strokeWidth="3" fill="none" strokeLinecap="round" />
                               </svg>
                             </div>
@@ -77,11 +77,11 @@ export function FeaturedProjectsSection() {
                           </div>
                         </div>
                       ) : project.title.includes('Marketplace') ? (
-                        <div className="h-full w-full flex gap-3">
-                          <div className="flex-1 rounded-md bg-white p-3 shadow-inner">
+                        <div className="grid h-full w-full gap-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,0.42fr)]">
+                          <div className="min-w-0 rounded-md bg-white p-3 shadow-inner">
                             <div className="flex items-center justify-between">
-                              <div className="h-3 w-40 rounded bg-slate-100" />
-                              <div className="h-3 w-24 rounded bg-slate-100" />
+                              <div className="h-3 w-1/2 rounded bg-slate-100" />
+                              <div className="h-3 w-1/4 rounded bg-slate-100" />
                             </div>
 
                             <div className="mt-3 grid grid-cols-3 gap-3">
@@ -103,7 +103,7 @@ export function FeaturedProjectsSection() {
                             </div>
                           </div>
 
-                          <div className="w-36 rounded-md bg-white p-3 shadow-sm">
+                          <div className="rounded-md bg-white p-3 shadow-sm">
                             <div className="text-xs text-slate-400">Orders</div>
                             <div className="mt-2 space-y-2">
                               <div className="flex items-center justify-between">
@@ -118,15 +118,15 @@ export function FeaturedProjectsSection() {
 
                             <div className="mt-3">
                               <div className="text-xs text-slate-400">Seller analytics</div>
-                              <svg viewBox="0 0 60 24" className="w-full h-12 mt-2">
+                              <svg viewBox="0 0 60 24" className="mt-2 h-12 w-full">
                                 <path d="M0,18 L10,12 L20,6 L30,10 L40,4 L50,8 L60,2" stroke="#1e40af" strokeWidth="2" fill="none" strokeLinecap="round" />
                               </svg>
                             </div>
                           </div>
                         </div>
                       ) : (
-                        <div className="h-full w-full flex gap-3">
-                          <div className="flex-1 rounded-md bg-white p-3 shadow-inner">
+                        <div className="grid h-full w-full gap-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,0.42fr)]">
+                          <div className="min-w-0 rounded-md bg-white p-3 shadow-inner">
                             <div className="flex items-center justify-between">
                               <div className="text-sm font-semibold">Appointments</div>
                               <div className="text-xs text-slate-400">Today</div>
@@ -154,7 +154,7 @@ export function FeaturedProjectsSection() {
                             </div>
                           </div>
 
-                          <div className="w-36 rounded-md bg-white p-3 shadow-sm">
+                          <div className="rounded-md bg-white p-3 shadow-sm">
                             <div className="text-xs text-slate-400">Customer</div>
                             <div className="mt-2 text-sm font-semibold">Maya Chen</div>
                             <div className="mt-2 text-xs text-slate-400">Visits: 12</div>
@@ -164,16 +164,16 @@ export function FeaturedProjectsSection() {
                     </div>
 
                     <div className="absolute inset-0 bg-gradient-to-t from-white/85 via-white/20 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
-                    <div className="absolute left-5 top-5 rounded-full border border-border bg-white/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 shadow-sm">
+                    <div className="absolute left-4 top-4 rounded-full border border-border bg-white/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 shadow-sm sm:left-5 sm:top-5">
                       Case study preview
                     </div>
                   </div>
-                  <CardHeader className="p-7">
+                  <CardHeader className="p-5 sm:p-6 lg:p-7">
                     <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">{project.category}</p>
-                    <CardTitle className="mt-2 text-[1.1rem]">{project.title}</CardTitle>
-                    <CardDescription className="mt-1">{project.description}</CardDescription>
+                    <CardTitle className="mt-2 text-[1rem] sm:text-[1.1rem]">{project.title}</CardTitle>
+                    <CardDescription className="mt-1 text-sm leading-7">{project.description}</CardDescription>
                   </CardHeader>
-                  <CardContent className="px-7 pb-7 pt-0">
+                  <CardContent className="px-5 pb-5 pt-0 sm:px-6 sm:pb-6 lg:px-7 lg:pb-7">
                     <div className="flex flex-wrap gap-2 border-t border-border pt-5 text-xs font-medium text-slate-500">
                       <span className="rounded-full border border-border bg-slate-50 px-3 py-1">Strategy</span>
                       <span className="rounded-full border border-border bg-slate-50 px-3 py-1">Delivery</span>

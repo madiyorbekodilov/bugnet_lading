@@ -43,8 +43,8 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className={geist.variable} suppressHydrationWarning>
-      <body>
+    <html lang="en" className={`${geist.variable} overflow-x-hidden`} suppressHydrationWarning>
+      <body className="overflow-x-hidden">
         <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
           <SiteHeader />
           <main>{children}</main>
