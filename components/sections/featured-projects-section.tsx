@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { MotionCard, MotionGroup, MotionItem, MotionSection } from '@/components/motion';
@@ -181,7 +180,7 @@ export function FeaturedProjectsSection() {
                       <span className="rounded-full border border-border bg-slate-50 px-3 py-1">Scale</span>
                     </div>
                     <Button asChild variant="secondary" size="sm" className="mt-5 w-full">
-                      <Link href="#contact" aria-label={`View project: ${project.title}`}>
+                      <Link href="/#contact" aria-label={`View project: ${project.title}`}>
                         View Project
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>

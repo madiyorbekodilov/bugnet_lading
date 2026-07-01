@@ -3,12 +3,11 @@
 import { motion } from 'framer-motion';
 
 export function HeroIllustration() {
-  const float = {
-    animate: {
-      y: [0, -8, 0],
-      rotate: [0, 1.5, 0],
-      transition: { duration: 6, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }
-    }
+  const floatTransition = {
+    duration: 6,
+    repeat: Infinity,
+    repeatType: 'reverse' as const,
+    ease: 'easeInOut' as const
   };
 
   return (
@@ -20,10 +19,9 @@ export function HeroIllustration() {
         {/* Left: ERP Dashboard (slightly behind) */}
         <motion.div
           className="relative z-10 -mr-8 w-[260px] rounded-2xl border border-slate-200 bg-white shadow-lg"
-          variants={float}
           initial={{ y: 8, rotate: -2 }}
           animate={{ y: [8, -6, 8], rotate: [-2, 1.5, -2] }}
-          transition={{ duration: 6, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
+          transition={floatTransition}
         >
           <div className="p-4">
             <div className="flex items-center justify-between">
@@ -79,10 +77,9 @@ export function HeroIllustration() {
         {/* Center: Salon Management (front) */}
         <motion.div
           className="relative z-20 w-[320px] -translate-y-2 rounded-2xl border border-slate-200 bg-white shadow-2xl"
-          variants={float}
           initial={{ y: -6, rotate: 2 }}
           animate={{ y: [-6, 6, -6], rotate: [2, -1.5, 2] }}
-          transition={{ duration: 5.5, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
+          transition={{ ...floatTransition, duration: 5.5 }}
         >
           <div className="p-5">
             <div className="flex items-center justify-between">
@@ -132,10 +129,9 @@ export function HeroIllustration() {
         {/* Right: AI Analytics (slightly behind) */}
         <motion.div
           className="relative z-0 -ml-8 w-[280px] rounded-2xl border border-slate-200 bg-white shadow-lg"
-          variants={float}
           initial={{ y: 6, rotate: -1 }}
           animate={{ y: [6, -4, 6], rotate: [-1, 2, -1] }}
-          transition={{ duration: 6.5, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
+          transition={{ ...floatTransition, duration: 6.5 }}
         >
           <div className="p-4">
             <div className="flex items-center justify-between">

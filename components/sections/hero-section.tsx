@@ -41,13 +41,13 @@ export function HeroSection() {
             <MotionItem>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg">
-                  <Link href="#contact">
+                  <Link href="/#contact">
                     Start a Project
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
                 <Button asChild variant="secondary" size="lg">
-                  <Link href="#services">View Services</Link>
+                  <Link href="/#services">View Services</Link>
                 </Button>
               </div>
             </MotionItem>

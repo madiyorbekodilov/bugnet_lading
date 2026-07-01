@@ -1,11 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import { MotionSection } from '@/components/motion';
 import { SectionHeading } from '@/components/section-heading';
 import { SectionShell } from '@/components/section-shell';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Button } from '@/components/ui/button';
 import { faqs } from '@/lib/site';
 
 export function FaqSection() {

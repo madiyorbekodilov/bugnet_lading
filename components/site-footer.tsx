@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { brand, footerServiceLinks, navItems, socialLinks } from '@/lib/site';
+import { brand, footerServiceLinks, navItems } from '@/lib/site';
 
 export function SiteFooter() {
   return (
@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1280px] px-6 py-16 lg:px-8 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr_0.75fr_0.95fr]">
           <div>
-            <Link href="#home" className="inline-flex items-center gap-3 font-semibold tracking-[-0.03em] text-primary">
+            <Link href="/#home" className="inline-flex items-center gap-3 font-semibold tracking-[-0.03em] text-primary">
               <img src="/logo.png" alt="BugNet" className="h-[42px] w-auto rounded-[8px]" />
               <span className="text-base">{brand.name}</span>
             </Link>
@@ -44,25 +44,30 @@ export function SiteFooter() {
           </div>
 
           <div>
-          <p className="text-sm font-semibold text-primary">Contact</p>
+            <p className="text-sm font-semibold text-primary">Contact</p>
             <ul className="mt-4 grid gap-3">
-            <li>
-              <Link href={`mailto:${brand.email}`} className="text-sm text-muted transition-colors hover:text-primary">
-                {brand.email}
-              </Link>
-            </li>
-            <li>
-              <Link href={`tel:+998903638333`} className="text-sm text-muted transition-colors hover:text-primary">
-                +998 90 363 83 33
-              </Link>
-            </li>
-            <li>
-              <Link href="https://t.me/BugNetTech" target="_blank" rel="noreferrer" className="text-sm text-muted transition-colors hover:text-primary">
-                @BugNetTech
-              </Link>
-            </li>
-          </ul>
-        </div>
+              <li>
+                <Link href={`mailto:${brand.email}`} className="text-sm text-muted transition-colors hover:text-primary">
+                  {brand.email}
+                </Link>
+              </li>
+              <li>
+                <Link href="tel:+998903638333" className="text-sm text-muted transition-colors hover:text-primary">
+                  +998 90 363 83 33
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://t.me/BugNetTech"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm text-muted transition-colors hover:text-primary"
+                >
+                  @BugNetTech
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-border/80 pt-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">

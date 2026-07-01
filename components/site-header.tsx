@@ -20,7 +20,7 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4 lg:px-8">
-        <Link href="#home" className="flex items-center gap-3 font-semibold tracking-[-0.04em] text-primary">
+        <Link href="/#home" className="flex items-center gap-3 font-semibold tracking-[-0.04em] text-primary">
           <img src="/logo.png" alt="BugNet" className="h-[36px] w-auto rounded-[6px]" />
           <span className="text-base">BugNet</span>
         </Link>
@@ -39,7 +39,7 @@ export function SiteHeader() {
 
         <div className="hidden lg:block">
           <Button asChild>
-            <Link href="#contact">Start a Project</Link>
+            <Link href="/#contact">Start a Project</Link>
           </Button>
         </div>
 
@@ -70,7 +70,7 @@ export function SiteHeader() {
               ))}
             </nav>
             <Button asChild className="mt-4 w-full">
-              <Link href="#contact" onClick={() => setOpen(false)}>
+              <Link href="/#contact" onClick={() => setOpen(false)}>
                 Start a Project
               </Link>
             </Button>

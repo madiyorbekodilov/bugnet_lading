@@ -27,11 +27,11 @@ export const brand = {
 };
 
 export const navItems: NavItem[] = [
-  { label: 'Home', href: '#home' },
-  { label: 'Services', href: '#services' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' }
+  { label: 'Home', href: '/#home' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Projects', href: '/#projects' },
+  { label: 'About', href: '/#about' },
+  { label: 'Contact', href: '/#contact' }
 ];
 
 export const services: ServiceItem[] = [
